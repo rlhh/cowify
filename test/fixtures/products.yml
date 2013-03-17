@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  available: false
+  item_ID: 1
+  name: MyString
+  static_image: MyString
+
+two:
+  available: false
+  item_ID: 1
+  name: MyString
+  static_image: MyString

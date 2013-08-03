@@ -6,8 +6,14 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-
 gem 'mechanize'
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+gem 'will_paginate', '~> 3.0'
+gem "bootstrap-will_paginate", "~> 0.0.9"
+gem "simple_form", "~> 2.1.0"
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -37,7 +43,3 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-
-gem 'therubyracer'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails'

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: Lots
+# Table name: lots
 #
 #  id             :integer          not null, primary key
 #  product_id     :integer          not null

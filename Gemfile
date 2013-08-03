@@ -42,6 +42,10 @@ end
 # gem 'capistrano', group: :development
 
 gem 'mechanize'
+gem 'twitter-bootstrap-rails'
+gem 'will_paginate'
+gem "bootstrap-will_paginate"
+gem "simple_form"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

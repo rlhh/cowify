@@ -1,0 +1,28 @@
+<div class="container-fluid fill">
+    <table class="table-center table-striped text-center">
+        <thead><tr>
+            <th><h4>Image</h4></th>
+            <th><h4>Grade</h4></th>
+            <th><h4>Included</h4></th>
+            <th><h4>Not Included</h4></th>
+            <th><h4>Notes</h4></th>
+            <th><h4>Price</h4></th>
+            <th><h4>Page</h4></th>
+            <th><h4>Row</h4></th>
+        </tr></thead>
+        <tbody>
+            <% @product.lots.each do |lot| %>
+                <tr>
+                    <td> <img src="<%= lot.image %>" alt="<%= lot.inventory_ID %>"> </td>
+                    <td> <b><%= lot.grade_num %></b> </td>
+                    <td> <b><%= lot.included %></b> </td>
+                    <td> <b><%= lot.not_included %></b> </td>
+                    <td> <b><%= lot.notes %></b> </td>
+                    <td> <b><%= lot.price %></b> </td>
+                    <td> <b><%= lot.page %></b> </td>
+                    <td> <b><%= lot.row %></b> </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

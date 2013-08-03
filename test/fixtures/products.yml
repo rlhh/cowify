@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: Products
+# Table name: products
 #
 #  id           :integer          not null, primary key
 #  available    :boolean          default(FALSE), not null

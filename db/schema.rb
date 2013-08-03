@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20130803024614) do
 
-  create_table "Lots", force: true do |t|
+  create_table "lots", force: true do |t|
     t.integer  "product_id",                                              null: false
     t.integer  "cowboom_lot_id",                                          null: false
     t.integer  "content_id",                                              null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20130803024614) do
     t.datetime "updated_at"
   end
 
-  create_table "Products", force: true do |t|
+  create_table "products", force: true do |t|
     t.integer  "cowboom_id",                   null: false
     t.string   "name",                         null: false
     t.boolean  "available",    default: false, null: false

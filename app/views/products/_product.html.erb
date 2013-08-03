@@ -13,7 +13,7 @@
         <tbody>
             <% @product.lots.each do |lot| %>
                 <tr>
-                    <td> <img src="<%= lot.image %>" alt="<%= lot.inventory_ID %>"> </td>
+                    <td> <img src="<%= lot.image %>" alt="<%= lot.product_id %>"> </td>
                     <td> <b><%= lot.grade_num %></b> </td>
                     <td> <b><%= lot.included %></b> </td>
                     <td> <b><%= lot.not_included %></b> </td>

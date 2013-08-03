@@ -22,7 +22,7 @@
 #
 
 class LotsController < ApplicationController
-  actions :all, except: [ :destroy ]
+  #actions :all, except: [ :destroy ]
 
   private
   def lot_params

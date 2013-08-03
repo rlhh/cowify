@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -43,6 +43,7 @@ end
 
 gem 'mechanize'
 gem 'twitter-bootstrap-rails'
+gem "less-rails"
 gem 'will_paginate'
 gem "bootstrap-will_paginate"
 gem "simple_form"

@@ -80,9 +80,9 @@ class Scraper
             price = doc.xpath("//div[@class='ProdPrice']")[i].text.tr('^0-9.', "")
 
             #content_ID = doc.search('input')[3+(i-1)*9].attr('value')
-            content_ID = doc.search('input')[3+(i)*9].attr('value')
+            content_ID = doc.search('input')[4+(i*9)].attr('value')
             #lot_ID = doc.search('input')[4+(i-1)*9].attr('value')
-            lot_ID = doc.search('input')[4+(i)*9].attr('value')
+            lot_ID = doc.search('input')[5+(i*9)].attr('value')
 
             #puts content_ID
             #puts lot_ID
@@ -107,6 +107,7 @@ class Scraper
                           :page => page_no,
                           :row => row_no,
                           :active => true )
+              debugger
             else
               Lot.find_by_inventory_ID(lot_ID).update_attributes(:active=>true, :page=>page_no, :row=>row_no)
             end

@@ -78,9 +78,9 @@ def scrape( product_ID )
             price = doc.xpath("//div[@class='ProdPrice']")[i].text.tr('^0-9.', "")
 
             #content_ID = doc.search('input')[3+(i-1)*9].attr('value')
-            content_ID = doc.search('input')[3+(i)*9].attr('value')
+            content_ID = doc.search('input')[4].attr('value')
             #lot_ID = doc.search('input')[4+(i-1)*9].attr('value')
-            lot_ID = doc.search('input')[4+(i)*9].attr('value')
+            lot_ID = doc.search('input')[5].attr('value')
 
             #puts content_ID
             puts lot_ID

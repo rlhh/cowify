@@ -28,8 +28,10 @@ class Product < ActiveRecord::Base
     #product title
     page = @agent.get(CONFIG[:cowboom_product_url] + self.cowboom_id.to_s)
     doc = page.parser
+
     name = doc.search('h1.product-profile-title').text.strip
-    static_image = doc.xpath("//div[@id='productImage2']/img").attr('src').text
+
+    static_image = doc.xpath("//div[@id='productImage2']/img").attr('src').text unless doc.xpath("//div[@id='productImage2']/img").empty?
 
     #preowned = page.search('div.ProdDetailTable').text
 

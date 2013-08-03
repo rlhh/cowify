@@ -37,7 +37,14 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    columnize (0.3.6)
     commonjs (0.2.6)
+    debugger (1.6.1)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.3)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.3)
     domain_name (0.5.12)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -154,6 +161,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-will_paginate
   coffee-rails (~> 4.0.0)
+  debugger
   jbuilder (~> 1.2)
   jquery-rails
   less-rails

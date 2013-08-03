@@ -15,7 +15,8 @@ class ProductsController < ApplicationController
   #actions :all, except: [ :destroy ]
 
   def index
-    @products = Product.all
+    result = Product.all
+    @products = result.paginate(:page => (result.size/10)+1, :per_page => 1)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,11 +27,22 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @product = Product.find_by_id(params[:id])
+    result = Product.find_by_id(params[:id])
+    @products = result.paginate(:page => (result.size/10)+1, :per_page => 1)
 
     respond_to do |format|
       format.html # show.html.erb
                   #format.json { render json: @product }
+    end
+  end
+
+  def create
+    @product = Product.new(cowboom_id: params[:product][:cowboom_id])
+
+    if @product.save
+      redirect_to @product
+    else
+      render action: "new"
     end
   end
 

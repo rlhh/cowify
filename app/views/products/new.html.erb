@@ -1,0 +1,4 @@
+<%= simple_form_for Product.new do |form| %>
+  <%= form.input :cowboom_id, as: :text, input_html: { rows: 1 } %>
+  <%= form.submit "Create", class: "btn btn-primary" %>
+<% end %>

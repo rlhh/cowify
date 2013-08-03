@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id           :integer          not null, primary key
+#  available    :boolean          default(FALSE), not null
+#  cowboom_id   :integer          not null
+#  name         :string(255)      not null
+#  static_image :string(255)      not null
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cowboom_id: 1
+  name: MyString
+  available: false
+  static_image: MyString
+
+two:
+  cowboom_id: 1
+  name: MyString
+  available: false
+  static_image: MyString

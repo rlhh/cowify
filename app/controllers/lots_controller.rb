@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: lots
+# Table name: Lots
 #
 #  id             :integer          not null, primary key
 #  product_id     :integer          not null
@@ -22,6 +22,7 @@
 #
 
 class LotsController < ApplicationController
+  actions :all, except: [ :destroy ]
 
   private
   def lot_params

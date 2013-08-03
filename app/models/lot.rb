@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: lots
+# Table name: Lots
 #
 #  id             :integer          not null, primary key
 #  product_id     :integer          not null
@@ -21,5 +21,6 @@
 #  updated_at     :datetime
 #
 
-class Lots < ActiveRecord::Base
+class Lot < ActiveRecord::Base
+  belongs_to :product
 end

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: products
+# Table name: Products
 #
 #  id           :integer          not null, primary key
 #  available    :boolean          default(FALSE), not null
@@ -12,6 +12,7 @@
 #
 
 class ProductsController < ApplicationController
+  actions :all, except: [ :destroy ]
 
   private
   def product_params

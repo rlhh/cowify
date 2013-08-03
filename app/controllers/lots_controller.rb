@@ -21,14 +21,12 @@
 #  updated_at     :datetime
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+class LotsController < ApplicationController
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+  private
+  def lot_params
+    params.require(:lot).permit(:product_id, :cowboom_lot_id, :content_id, :price, :grade,
+                                :grade_num, :included, :location, :not_included, :notes,
+                                :active, :image, :page, :row)
+  end
+end

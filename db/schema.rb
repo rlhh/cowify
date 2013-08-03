@@ -14,28 +14,28 @@
 ActiveRecord::Schema.define(version: 20130803024614) do
 
   create_table "lots", force: true do |t|
-    t.boolean  "active",                                default: false, null: false
-    t.integer  "content_ID",                                            null: false
+    t.integer  "product_id",                                              null: false
+    t.integer  "cowboom_lot_id",                                          null: false
+    t.integer  "content_id",                                              null: false
+    t.decimal  "price",          precision: 12, scale: 4,                 null: false
     t.string   "grade"
-    t.integer  "grade_num",                             default: 10
-    t.string   "image"
+    t.integer  "grade_num",                               default: 10
     t.string   "included"
-    t.integer  "inventory_ID",                                          null: false
     t.string   "location"
     t.string   "not_included"
     t.string   "notes"
-    t.integer  "page",                                                  null: false
-    t.decimal  "price",        precision: 12, scale: 4,                 null: false
-    t.integer  "product_id",                                            null: false
-    t.integer  "row",                                                   null: false
+    t.boolean  "active",                                  default: false, null: false
+    t.string   "image"
+    t.integer  "page",                                                    null: false
+    t.integer  "row",                                                     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "products", force: true do |t|
-    t.boolean  "available",    default: false, null: false
     t.integer  "cowboom_id",                   null: false
     t.string   "name",                         null: false
+    t.boolean  "available",    default: false, null: false
     t.string   "static_image",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"

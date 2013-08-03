@@ -11,6 +11,10 @@
 #  updated_at   :datetime
 #
 
-class Products < ActiveRecord::Base
-  #attr_accessible :id, :available, :cowboom_id, :name, :static_image
+class ProductsController < ApplicationController
+
+  private
+  def product_params
+    params.require(:product).permit(:available, :cowboom_id, :name, :static_image)
+  end
 end

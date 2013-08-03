@@ -27,8 +27,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    result = Product.find_by_id(params[:id])
-    @products = result.paginate(:page => (result.size/10)+1, :per_page => 1)
+    @product = Product.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

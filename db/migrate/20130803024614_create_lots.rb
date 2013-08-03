@@ -7,10 +7,10 @@ class CreateLots < ActiveRecord::Migration
       t.decimal :price,           null: false, precision: 12, scale: 4
       t.string  :grade
       t.integer :grade_num,       default: 10
-      t.string  :included
-      t.string  :location
-      t.string  :not_included
-      t.string  :notes
+      t.text    :included
+      t.text    :location
+      t.text    :not_included
+      t.text    :notes
       t.boolean :active,          null: false, default: false
       t.string  :image
       t.integer :page,            null: false

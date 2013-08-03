@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 20130803024614) do
     t.decimal  "price",          precision: 12, scale: 4,                 null: false
     t.string   "grade"
     t.integer  "grade_num",                               default: 10
-    t.string   "included"
-    t.string   "location"
-    t.string   "not_included"
-    t.string   "notes"
+    t.text     "included"
+    t.text     "location"
+    t.text     "not_included"
+    t.text     "notes"
     t.boolean  "active",                                  default: false, null: false
     t.string   "image"
     t.integer  "page",                                                    null: false

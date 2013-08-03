@@ -1,4 +1,7 @@
-<%= simple_form_for Product.new do |form| %>
-  <%= form.input :cowboom_id, as: :text, input_html: { rows: 1 } %>
-  <%= form.submit "Create", class: "btn btn-primary" %>
+<%= simple_form_for Product.new, class: "navbar-form pull-right" do |form| %>
+  <%= form.input :cowboom_id, :label => false, wrapper_html: {class: "navbar-form pull-right" } do %>
+
+      <%= form.input_field :cowboom_id, as: :text, class: "form-control" %>
+      <%= form.submit "Track Product", class: "btn btn-primary" %>
+  <% end %>
 <% end %>

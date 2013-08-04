@@ -9,36 +9,36 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended that you check this file into your version control system.
+# It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130803024614) do
+ActiveRecord::Schema.define(:version => 20130316203519) do
 
-  create_table "lots", force: true do |t|
-    t.integer  "product_id",                                              null: false
-    t.integer  "cowboom_lot_id",                                          null: false
-    t.integer  "content_id",                                              null: false
-    t.decimal  "price",          precision: 12, scale: 4,                 null: false
+  create_table "lots", :force => true do |t|
+    t.boolean  "active"
+    t.integer  "content_ID"
     t.string   "grade"
-    t.integer  "grade_num",                               default: 10
-    t.text     "included"
-    t.text     "location"
-    t.text     "not_included"
-    t.text     "notes"
-    t.boolean  "active",                                  default: false, null: false
+    t.integer  "grade_num"
     t.string   "image"
-    t.integer  "page",                                                    null: false
-    t.integer  "row",                                                     null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "included"
+    t.integer  "inventory_ID"
+    t.string   "location"
+    t.string   "not_included"
+    t.string   "notes"
+    t.integer  "page"
+    t.decimal  "price"
+    t.integer  "product_id"
+    t.integer  "row"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
-  create_table "products", force: true do |t|
-    t.integer  "cowboom_id",                   null: false
-    t.string   "name",                         null: false
-    t.boolean  "available",    default: false, null: false
-    t.string   "static_image",                 null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "products", :force => true do |t|
+    t.boolean  "available"
+    t.integer  "item_ID"
+    t.string   "name"
+    t.string   "static_image"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end

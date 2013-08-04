@@ -1,12 +1,7 @@
 # Be sure to restart your server when you modify this file.
 
-# Your secret key is used for verifying the integrity of signed cookies.
+# Your secret key for verifying the integrity of signed cookies.
 # If you change this key, all old signed cookies will become invalid!
-
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-# You can use `rake secret` to generate a secure secret key.
-
-# Make sure your secret_key_base is kept private
-# if you're sharing your code publicly.
-Cowify::Application.config.secret_key_base = 'cbbe3a85f5fea9a4c8064c04a550e5bdf56238ecf460a47784b90db2f7823bc20bb24ed960f88fde391dbd03eac251e1116a4a8070a03c303d4f553d55f441dd'
+Cowify::Application.config.secret_token = '537ac2b2dfd5cd04807c6d16cf1dec33111b1aa0ff5897832d344afa92400c9839fcdb8855c95139bd9f207987b8d522317c3610fc3de688f79be75a494bc92d'

@@ -1,21 +1,7 @@
-# == Schema Information
-#
-# Table name: products
-#
-#  id           :integer          not null, primary key
-#  available    :boolean          default(FALSE), not null
-#  cowboom_id   :integer          not null
-#  name         :string(255)      not null
-#  static_image :string(255)      not null
-#  created_at   :datetime
-#  updated_at   :datetime
-#
-
 class ProductsController < ApplicationController
-  #actions :all, except: [ :destroy ]
 
   def index
-    @products = Product.all.paginate(page: params[:page], per_page: 10)
+    @products = Product.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,7 +12,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find_by_id(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,22 +20,17 @@ class ProductsController < ApplicationController
     end
   end
 
-  def create
-    cowboom_id = params[:product][:cowboom_id].sub(/^https?\:\/\//, '').sub(/^www./,'').sub(/cowboom.com\/product\//, '')
-
-    @product = Product.where(cowboom_id: cowboom_id).first_or_create
-
-    if not @product.new_record?
-      redirect_to @product
-    elsif @product.save
-      redirect_to @product
-    else
-      render action: "new"
+  # POST /obtain/1
+  def obtain
+    scrapy = Scraper.new  
+    
+    @product = scrapy.scrape((params[:pid]))
+    
+    if @product
+      redirect_to @product, notice: 'Product successfully updated'
+    elsif
+      redirect_to root_path, notice: 'Invalid product requested'
     end
   end
-
-  private
-  def product_params
-    params.require(:product).permit(:available, :cowboom_id, :name, :static_image)
-  end
+  
 end

@@ -1,11 +1,9 @@
-<div class="navbar navbar-inverse">
-  <div class="navbar-inner navbar-inverse">
+<div class="navbar">
+  <div class="navbar-inner">
     <a class="brand" href="/">Cowify</a>
-    <ul class="nav pull-;eft">
-      <li class="<%= 'active' if current_page?(root_path) %> "><%= link_to "Home", root_path %></li>
+    <ul class="nav">
+      <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
     </ul>
+    <div id="scrape"><%= render 'scrape' %></div>
   </div>
 </div>
-<p id="notice"><%= notice %></p>
-<%= render 'fields' %>
-

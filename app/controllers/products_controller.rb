@@ -15,8 +15,7 @@ class ProductsController < ApplicationController
   #actions :all, except: [ :destroy ]
 
   def index
-    result = Product.all
-    @products = result.paginate(:page => (result.size/10)+1, :per_page => 1)
+    @products = Product.all.paginate(page: params[:page], per_page: 10)
 
     respond_to do |format|
       format.html # index.html.erb

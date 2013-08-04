@@ -15,7 +15,7 @@ class Product < ActiveRecord::Base
   has_many :lots
 
   validates :available,     presence: true
-  validates :cowboom_id,    presence: true
+  validates :cowboom_id,    presence: true, uniqueness: true
   validates :name,          presence: true
   validates :static_image,  presence: true
 
@@ -49,6 +49,8 @@ class Product < ActiveRecord::Base
     page = @agent.get(CONFIG[:cowboom_best_available_base_url] + self.cowboom_id.to_s + CONFIG[:cowboom_best_available_page] + page_no.to_s)
     doc = page.parser
 
+    debugger
+
     num_of_products_in_page = doc.search('div.rtLbl').size
     while( num_of_products_in_page != 0 )
 
@@ -60,7 +62,6 @@ class Product < ActiveRecord::Base
 
           if( notes_exist != nil && notes_exist.text.strip == "Notes:" )
             notes = text.split("Notes:")[1].split("What's Included")[0].strip
-            #puts notes
           else
             notes = ""
           end
@@ -78,8 +79,8 @@ class Product < ActiveRecord::Base
 
           price = doc.xpath("//div[@class='ProdPrice']")[i].text.tr('^0-9.', "")
 
-          content_id = doc.search('input')[4+(i*9)].attr('value')
-          lot_id = doc.search('input')[5+(i*9)].attr('value')
+          content_id = doc.search('input')[4+(i*10)].attr('value')
+          lot_id = doc.search('input')[5+(i*10)].attr('value')
 
           image = doc.search( 'div > a > img > @src' )[i].text.gsub("/thumb", "")
 

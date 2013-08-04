@@ -7,10 +7,12 @@
     </tr></thead>
     <tbody>
     <% @products.each do |product| %>
-      <tr>
-        <td> <img src="<%= product.lots.first.image %>" alt="<%= product.id %>"> </td>
-        <td> <b><%= link_to " #{product.name}", product %></b> </td>
-      </tr>
+      <% if product.lots.size > 0%>
+        <tr>
+          <td> <img src="<%= product.lots.first.image %>" alt="<%= product.id %>"> </td>
+          <td> <b><%= link_to " #{product.name}", product %></b> </td>
+        </tr>
+      <% end %>
     <% end %>
     </tbody>
   </table>

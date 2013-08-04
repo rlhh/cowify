@@ -1,14 +1,11 @@
-<div class="navbar">
-  <div class="navbar-inner">
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner navbar-inverse">
     <a class="brand" href="/">Cowify</a>
-    <ul class="nav">
-      <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+    <ul class="nav pull-;eft">
+      <li class="<%= 'active' if current_page?(root_path) %> "><%= link_to "Home", root_path %></li>
     </ul>
-    <%= simple_form_for Product.new, class: "navbar-form pull-right" do |form| %>
-        <%= form.input :cowboom_id, :label => false, wrapper_html: {class: "navbar-form pull-right" } do %>
-            <%= form.input_field :cowboom_id, as: :text, class: "form-control" %>
-            <%= form.submit "Track Product", class: "btn btn-primary" %>
-        <% end %>
-    <% end %>
   </div>
 </div>
+<p id="notice"><%= notice %></p>
+<%= render 'fields' %>
+

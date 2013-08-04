@@ -1,4 +1,4 @@
-<div class="container-fluid fill">
+<div class="container-fluid fill text-center">
     <table class="table-center table-striped text-center">
         <thead><tr>
             <th><h4>Image</h4></th>
@@ -11,7 +11,7 @@
             <th><h4>Row</h4></th>
         </tr></thead>
         <tbody>
-            <% @product.lots.each do |lot| %>
+            <% @product.lots.order("grade_num DESC").each do |lot| %>
                 <tr>
                     <td> <img src="<%= lot.image %>" alt="<%= lot.product_id %>"> </td>
                     <td> <b><%= lot.grade_num %></b> </td>

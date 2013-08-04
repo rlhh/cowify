@@ -35,9 +35,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(cowboom_id: params[:product][:cowboom_id])
+    cowboom_id = params[:product][:cowboom_id].sub(/^https?\:\/\//, '').sub(/^www./,'').sub(/cowboom.com\/product\//, '')
 
-    if @product.save
+    @product = Product.where(cowboom_id: cowboom_id).first_or_create
+
+    if not @product.new_record?
+      redirect_to @product
+    elsif @product.save
       redirect_to @product
     else
       render action: "new"

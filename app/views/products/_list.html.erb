@@ -1,4 +1,4 @@
-<div class="container-fluid fill">
+<div class="container-fluid fill text-center">
   <%= will_paginate @products %>
   <table class="table table-center table-striped table-hover text-center">
     <thead><tr>
@@ -7,14 +7,10 @@
     </tr></thead>
     <tbody>
     <% @products.each do |product| %>
-        <tr>
-          <td>
-            <img src="<%= product.lots.first.image %>" alt="<%= product.id %>">
-          </td>
-          <td>
-            <b><%= link_to " #{product.name}", product %></b>
-          </td>
-        </tr>
+      <tr>
+        <td> <img src="<%= product.lots.first.image %>" alt="<%= product.id %>"> </td>
+        <td> <b><%= link_to " #{product.name}", product %></b> </td>
+      </tr>
     <% end %>
     </tbody>
   </table>

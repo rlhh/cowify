@@ -20,7 +20,7 @@ class Product < ActiveRecord::Base
   validates :static_image,  presence: true
 
   before_validation :get_product_details, on: :create
-  after_create :get_lots
+  after_save :get_lots
 
   def get_product_details
     @agent = Mechanize.new
@@ -48,8 +48,6 @@ class Product < ActiveRecord::Base
     page_no = 1
     page = @agent.get(CONFIG[:cowboom_best_available_base_url] + self.cowboom_id.to_s + CONFIG[:cowboom_best_available_page] + page_no.to_s)
     doc = page.parser
-
-    debugger
 
     num_of_products_in_page = doc.search('div.rtLbl').size
     while( num_of_products_in_page != 0 )

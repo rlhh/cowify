@@ -1,6 +1,6 @@
-<form class="navbar-form pull-right">
-  <%= simple_form_for Product.new do |form| %>
-    <%= form.input :cowboom_id, as: :text, input_html: { rows: 1 } %>
-    <%= form.submit "Create", class: "btn btn-primary" %>
- <% end %>
-</form>
+<div class="text-center">
+<%= simple_form_for Product.new, :html => { class: "form-inline" } do |form| %>
+  <%= form.text_field :cowboom_id, placeholder: "Cowboom URL/product id", :input_html => { rows: 1 } %>
+  <%= form.submit "Track Product", class: "btn btn-primary" %>
+<% end %>
+</div>
